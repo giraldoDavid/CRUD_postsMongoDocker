@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+        api:
+            container_name: api-post-dock
+            restart: always
+            build: .
+            ports: 
+                - 4000:3030
+            links:
+                - mongo
+            volumes:
+                - .:/app
+
+        mongo:
+            container_name: mongoDB
+            image: mongo
+            ports:
+                - 27022:27017
