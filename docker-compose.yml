@@ -9,8 +9,6 @@ services:
                 - 4000:3030
             links:
                 - mongo
-            volumes:
-                - .:/app
 
         mongo:
             container_name: mongoDB
